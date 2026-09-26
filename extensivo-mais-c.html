@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#fbf8f1" />
+
+  <title>Extensivo +C 2026 — Prof. Henry Jansen | Matemática MC</title>
+  <meta
+    name="description"
+    content="A preparação mais completa de matemática para os vestibulares do Paraná em 2026: aulas ao vivo, listas RELISES e LICS, Super Intensivo, revisões de véspera e apostila impressa."
+  />
+
+  <!--
+    ANTES DE PUBLICAR:
+    1) Troque "https://www.seudominio.com.br/" nas tags og:url e canonical.
+    2) Nome, curso e instituição dos alunos vêm do nome do arquivo.
+    3) O link do checkout da Kiwify fica no href do botão "Quero minha
+       vaga", lá embaixo na seção de matrícula.
+  -->
+
+  <link rel="canonical" href="https://www.seudominio.com.br/extensivo-mais-c.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:title" content="Extensivo +C 2026 — a preparação mais completa" />
+  <meta
+    property="og:description"
+    content="Aulas ao vivo, listas focadas nas bancas do Paraná, Super Intensivo e acompanhamento direto do professor."
+  />
+  <meta property="og:image" content="src/img/perfil.jpg" />
+  <meta property="og:url" content="https://www.seudominio.com.br/extensivo-mais-c.html" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Extensivo +C 2026 — Prof. Henry Jansen" />
+  <meta name="twitter:description" content="Sua preparação mais completa para 2026." />
+  <meta name="twitter:image" content="src/img/perfil.jpg" />
+
+  <link rel="icon" href="src/img/perfil.jpg" type="image/jpeg" />
+  <link rel="apple-touch-icon" href="src/img/perfil.jpg" />
+
+  <!-- Fontes auto-hospedadas: a dos títulos entra primeiro porque é
+       a do H1, o maior elemento da primeira tela.
+       O preload só é criado quando a página vem de um servidor. Aberta
+       direto do disco (file://), a origem é "null": o preload falha por
+       CORS e o Safari não tenta de novo pelo CSS, deixando títulos e
+       texto na fonte do sistema. Sem o preload, o CSS carrega as fontes
+       normalmente. -->
+  <script>
+    if (location.protocol !== "file:") {
+      ["bricolage-grotesque", "figtree"].forEach((fonte) => {
+        const link = document.createElement("link");
+        link.rel = "preload";
+        link.as = "font";
+        link.type = "font/woff2";
+        link.crossOrigin = "anonymous";
+        link.href = `src/fonts/${fonte}.woff2`;
+        document.head.appendChild(link);
+      });
+    }
+  </script>
+
+  <link rel="stylesheet" href="src/css/estilo.css" />
+
+  <!-- Marca que o JavaScript esta ativo. Sem isso, o CSS mantem todo
+       o conteudo visivel em vez de esperar a animacao de entrada. -->
+  <script>document.documentElement.classList.add("com-js");</script>
+</head>
+<body>
+
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ===================== CAMADAS DE FUNDO ===================== -->
+  <!-- Formulas e figuras matematicas ao fundo, em tres planos de
+       profundidade. Os desenhos ficam no CSS (.camada--*). -->
+  <div class="fundo-matematico" aria-hidden="true">
+    <span class="camada camada--longe"></span>
+    <span class="camada camada--meio"></span>
+    <span class="camada camada--perto"></span>
+  </div>
+
+  <div class="fundo-simbolos" aria-hidden="true">
+    <span style="top:6%; left:6%; font-size:2.6rem; --rot:-8deg; --dur:12s; animation-delay:-1.5s;">&pi;</span>
+    <span style="top:14%; right:7%; font-size:2.1rem; --rot:6deg; --dur:9s; animation-delay:-4s;">&Sigma;</span>
+    <span style="top:37%; left:3%; font-size:1.7rem; --dur:10.5s; animation-delay:-2.5s;">&radic;</span>
+    <span style="top:26%; left:15%; font-size:1.4rem; --rot:12deg; --dur:8s; animation-delay:-6s;">&times;</span>
+    <span style="top:50%; right:4%; font-size:1.6rem; --rot:-6deg; --dur:11s; animation-delay:-3s;">&divide;</span>
+    <span style="top:47%; left:12%; font-size:1.8rem; --rot:4deg; --dur:13s; animation-delay:-7s;">&theta;</span>
+    <span style="top:4%; right:20%; font-size:1.3rem; --rot:-4deg; --dur:9.5s; animation-delay:-5s;">&part;</span>
+    <span style="top:72%; left:5%; font-size:1.5rem; --rot:8deg; --dur:10s; animation-delay:-1s;">&plusmn;</span>
+    <span style="top:62%; right:12%; font-size:1.4rem; --dur:12.5s; animation-delay:-8s;">&Delta;</span>
+    <span style="bottom:20%; right:5%; font-size:2.4rem; --rot:-5deg; --dur:11.5s; animation-delay:-4.5s;">&infin;</span>
+    <span style="bottom:8%; left:9%; font-size:1.9rem; --dur:9s; animation-delay:-2s;">&int;</span>
+    <span style="bottom:32%; right:16%; font-size:1.6rem; --rot:-10deg; --dur:10s; animation-delay:-6.5s;">%</span>
+  </div>
+
+  <div class="fundo-grao" aria-hidden="true"></div>
+
+  <!-- ===================== CABEÇALHO ===================== -->
+  <header class="cabecalho">
+    <div class="container">
+      <div class="nav">
+        <a class="nav-marca" href="index.html">
+          <img src="src/img/perfil.jpg" alt="" width="42" height="42" />
+          <span class="nav-marca-texto">
+            MatemáticaMC
+            <small>Prof. Henry Jansen</small>
+          </span>
+        </a>
+
+        <button
+          id="nav-abrir"
+          class="nav-abrir"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-links"
+          aria-label="Abrir menu de navegação"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+
+        <nav id="nav-links" class="nav-links" aria-label="Navegação principal">
+          <a href="index.html">Início</a>
+          <a href="#conteudo-curso">O que está incluso</a>
+          <a href="#aprovados">Aprovados</a>
+          <a href="#duvidas">Dúvidas</a>
+        </nav>
+
+        <div class="nav-acoes">
+          <a class="botao botao--primario botao--pequeno" href="#matricula">Garantir vaga</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" class="pagina">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="container hero-grade">
+        <div class="hero-conteudo">
+          <span class="secao-etiqueta anim-cascata">Extensivo +C &middot; Turma 2026</span>
+
+          <h1 class="anim-cascata">
+            Sua preparação mais
+            <span class="texto-marcado">completa</span>
+            para 2026.
+          </h1>
+
+          <p class="hero-texto anim-cascata">
+            O curso para quem não quer deixar nenhuma brecha: da matemática
+            básica ao aulão de véspera, com listas feitas sob medida para as
+            bancas do Paraná e o professor ao seu lado o ano inteiro.
+          </p>
+
+          <div class="hero-acoes anim-cascata">
+            <a class="botao botao--primario botao--grande" href="#matricula">
+              Garantir meu acesso
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m9 6 6 6-6 6"/>
+              </svg>
+            </a>
+          </div>
+
+          <p class="hero-apoio anim-cascata">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 6 9 17l-5-5"/>
+            </svg>
+            12x de R$ 144,59 &middot; 7 dias de garantia
+          </p>
+        </div>
+
+        <div class="hero-figura anim-cascata">
+          <!-- Arco verde com a grade do caderno e uma parabola em giz -->
+          <div class="hero-quadro" aria-hidden="true">
+            <svg viewBox="0 0 416 360" preserveAspectRatio="xMidYMid slice" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <g stroke="rgba(246,244,236,0.6)" stroke-width="2">
+                <path d="M18 292Q208 294 398 290"/>
+                <path d="M388 284l10 6-10 6"/>
+                <path d="M64 346Q62 200 65 42"/>
+                <path d="M58 52l7-10 7 10"/>
+                <path d="M124 286v10M184 286v10M244 286v10M304 286v10M59 232h11M59 172h11M59 112h11"/>
+              </g>
+              <path d="M36 44Q208 560 380 44" stroke="#ffd84a" stroke-width="4.5"/>
+              <g fill="rgba(246,244,236,0.75)" font-family="Zen Kurenaido, cursive" font-size="22">
+                <text x="386" y="322">x</text>
+                <text x="78" y="50">y</text>
+              </g>
+            </svg>
+          </div>
+
+          <picture>
+            <source srcset="src/img/foto_de_perfil.webp" type="image/webp" />
+            <img
+              src="src/img/foto_de_perfil.png"
+              alt="Professor Henry Jansen de braços cruzados"
+              width="900"
+              height="1147"
+              fetchpriority="high"
+            />
+          </picture>
+
+          <span class="adesivo adesivo--pi" aria-hidden="true">&pi;</span>
+          <span class="adesivo adesivo--raiz" aria-hidden="true">&radic;</span>
+          <span class="adesivo adesivo--soma" aria-hidden="true">&Sigma;</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PARA QUEM É ===================== -->
+    <section class="secao secao--painel">
+      <div class="container">
+        <div class="secao-cabecalho secao-cabecalho--centro">
+          <span class="secao-etiqueta anim-cascata">Antes de você decidir</span>
+          <h2 class="anim-cascata">O +C é pra você?</h2>
+          <p class="subtitulo anim-cascata">
+            Prefiro ser honesto agora do que te ver pedindo reembolso depois.
+          </p>
+        </div>
+
+        <div class="publico-grade">
+          <div class="publico-cartao publico-cartao--sim anim-cascata">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/>
+              </svg>
+              É pra você se...
+            </h3>
+            <ul class="publico-lista">
+              <li>Você vai prestar vestibular no Paraná em 2026 e quer a vaga, não a experiência.</li>
+              <li>Sua base em matemática tem buracos — mesmo que sejam buracos grandes.</li>
+              <li>Você quer estudar com um plano pronto, em vez de decidir sozinho o que fazer toda semana.</li>
+              <li>Você já tentou antes e quer chegar na prova sabendo que fez tudo o que dava.</li>
+              <li>Você gosta de poder perguntar direto pro professor quando trava.</li>
+            </ul>
+          </div>
+
+          <div class="publico-cartao publico-cartao--nao anim-cascata">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/><path d="m9 9 6 6M15 9l-6 6"/>
+              </svg>
+              Não é pra você se...
+            </h3>
+            <ul class="publico-lista">
+              <li>Você procura uma fórmula mágica que dispense estudar.</li>
+              <li>Você quer só um banco de videoaulas para assistir quando lembrar.</li>
+              <li>Seu foco é um vestibular de outro estado, sem relação com as bancas daqui.</li>
+              <li>Você não pretende fazer nenhuma lista de exercícios durante o ano.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="cta-faixa anim-cascata">
+          <a class="botao botao--primario" href="#matricula">
+            Quero minha vaga
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== BANNER DO ZERO ===================== -->
+    <section class="secao">
+      <div class="container">
+        <div class="banner-zero lousa anim-cascata">
+          <div class="banner-zero-texto">
+            <h2>Começar do zero não é vergonha. É o plano.</h2>
+            <p>
+              O curso de matemática básica tem mais de 130 aulas e 1000
+              exercícios, partindo do que você deveria ter aprendido no
+              fundamental. Você não precisa estar pronto para começar — você
+              começa para ficar pronto.
+            </p>
+
+            <!-- Reta numerica: o ponto de partida e o zero -->
+            <svg class="banner-zero-reta" viewBox="0 0 380 76" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <g stroke="currentColor" stroke-width="2.2" opacity="0.7">
+                <path d="M6 30Q190 31.5 370 29"/>
+                <path d="M361 23l9 6-9 6"/>
+                <path d="M90 22v16M150 22v16M210 22v16M270 22v16M330 22v16"/>
+              </g>
+              <circle cx="30" cy="30" r="7" fill="#ffd84a"/>
+              <ellipse cx="30" cy="61" rx="15" ry="13" stroke="#ffd84a" stroke-width="2.4" transform="rotate(-10 30 61)"/>
+              <g font-family="Zen Kurenaido, cursive" font-size="21" text-anchor="middle">
+                <text x="30" y="68" fill="#ffd84a">0</text>
+                <g fill="currentColor" opacity="0.7">
+                  <text x="90" y="68">1</text>
+                  <text x="150" y="68">2</text>
+                  <text x="210" y="68">3</text>
+                  <text x="270" y="68">4</text>
+                  <text x="330" y="68">5</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="banner-zero-figura">
+            <picture>
+              <source srcset="src/img/foto_de_perfil.webp" type="image/webp" />
+              <img src="src/img/foto_de_perfil.png" alt="" width="900" height="1147" loading="lazy" />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TUDO O QUE ESTÁ INCLUSO ===================== -->
+    <section id="conteudo-curso" class="secao secao--painel">
+      <div class="container">
+        <div class="secao-cabecalho secao-cabecalho--centro">
+          <span class="secao-etiqueta anim-cascata">O que você recebe</span>
+          <h2 class="anim-cascata">Tudo o que está incluso no +C</h2>
+          <p class="subtitulo anim-cascata">
+            Quatro frentes de trabalho que se sustentam: aula, material, reta
+            final e suporte.
+          </p>
+        </div>
+
+        <div class="conteudo-grade conteudo-grade--duas">
+
+          <!-- Bloco 1 — Aulas ao vivo -->
+          <article class="conteudo-bloco conteudo-bloco--aulas anim-cascata">
+            <div class="conteudo-bloco-topo">
+              <span class="conteudo-bloco-icone">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2.5" y="5" width="19" height="13" rx="3"/>
+                  <path d="M10 9.5v4l3.5-2-3.5-2Z" fill="currentColor" stroke="none"/>
+                </svg>
+              </span>
+              <h3>Aulas ao vivo</h3>
+            </div>
+
+            <ul class="conteudo-itens">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                <div>
+                  <strong>3 frentes de matemática toda semana</strong>
+                  <p>E se você faltar, tudo bem: a aula fica salva na plataforma para assistir quando e quantas vezes quiser.</p>
+                </div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                <div>
+                  <strong>Curso completo das habilidades do ENEM</strong>
+                  <p>Aula ao vivo passando por todas as habilidades de matemática cobradas na prova, uma a uma.</p>
+                </div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                <div>
+                  <strong>Aula de dúvidas toda semana</strong>
+                  <p>Um horário fixo por semana para você levar o que travou — direto com o professor.</p>
+                </div>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Bloco 2 — Material e exercícios -->
+          <article class="conteudo-bloco conteudo-bloco--material anim-cascata">
+            <div class="conteudo-bloco-topo">
+              <span class="conteudo-bloco-icone">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/>
+                  <path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/>
+                </svg>
+              </span>
+              <h3>Material e exercícios</h3>
+            </div>
+
+            <ul class="conteudo-itens">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                <div>
+                  <strong>Listas RELISES — uma por frente</strong>
+                  <p>Mais de 50 exercícios por lista, com o foco voltado para os principais vestibulares do Paraná.</p>
+                </div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                <div>
+                  <strong>Listas LICS — revisão espiralada</strong>
+                  <p>Toda semana você revê o conteúdo novo e o das semanas anteriores, com resolução em vídeo. Você revisa antes de esquecer, não depois.</p>
+                </div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                <div>
+                  <strong>Matemática básica completa</strong>
+                  <p>Mais de 130 aulas e 1000 exercícios, do mais básico possível até o ponto de partida do extensivo.</p>
+                </div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                <div>
+                  <strong>Apostila impressa na sua casa</strong>
+                  <p>Apostila teórica e de exercícios, impressas e entregues — exclusivo para alunos do +C e do Extensivo+ do DKFísica.</p>
+                </div>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Bloco 3 — Reta final -->
+          <article class="conteudo-bloco conteudo-bloco--reta-final anim-cascata">
+            <div class="conteudo-bloco-topo">
+              <span class="conteudo-bloco-icone">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 3v3M12 21v-3M4.2 7.2l2.2 2.2M17.6 17.6l2.2 2.2M3 12h3M21 12h-3M4.2 16.8l2.2-2.2M17.6 6.4l2.2-2.2"/>
+                  <circle cx="12" cy="12" r="3.2"/>
+                </svg>
+              </span>
+              <h3>Reta final</h3>
+            </div>
+
+            <ul class="conteudo-itens">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                <div>
+                  <strong>Super Intensivo garantido</strong>
+                  <p>Depois das 30 semanas do extensivo, você entra no Super Intensivo sem pagar nada a mais.</p>
+                </div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                <div>
+                  <strong>Revisões de véspera</strong>
+                  <p>Todas as aulas de revisão da semana das principais provas do Paraná, já inclusas na plataforma.</p>
+                </div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                <div>
+                  <strong>Todos os aulões do ano</strong>
+                  <p>Acesso liberado a todas as revisões e aulões de véspera realizados ao longo do ano.</p>
+                </div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                <div>
+                  <strong>Curso de discursivas</strong>
+                  <p>Para aprofundamento e para quem vai encarar a segunda fase.</p>
+                </div>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Bloco 4 — Suporte direto -->
+          <article class="conteudo-bloco conteudo-bloco--suporte anim-cascata">
+            <div class="conteudo-bloco-topo">
+              <span class="conteudo-bloco-icone">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 3a8.5 8.5 0 0 0-7.4 12.8L3 21l5.4-1.5A8.5 8.5 0 1 0 12 3Z"/>
+                </svg>
+              </span>
+              <h3>Suporte direto</h3>
+            </div>
+
+            <ul class="conteudo-itens">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                <div>
+                  <strong>Contato direto com o professor</strong>
+                  <p>Dúvida às 23h da véspera da prova? Você fala com o Henry, na plataforma ou no WhatsApp. Não é monitor.</p>
+                </div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                <div>
+                  <strong>Cronograma montado com você</strong>
+                  <p>Planejamento e cronograma de estudos definidos diretamente com o professor, não um PDF genérico.</p>
+                </div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                <div>
+                  <strong>Métodos e rotinas personalizados</strong>
+                  <p>A forma de estudar é ajustada para a sua dificuldade e para o tempo que você realmente tem.</p>
+                </div>
+              </li>
+            </ul>
+          </article>
+        </div>
+        <div class="cta-faixa anim-cascata">
+          <a class="botao botao--primario" href="#matricula">
+            Garantir meu acesso
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===================== FOCO NO PARANÁ ===================== -->
+    <section class="secao">
+      <div class="container">
+        <div class="secao-cabecalho secao-cabecalho--centro">
+          <span class="secao-etiqueta anim-cascata">O diferencial</span>
+          <h2 class="anim-cascata">
+            A única plataforma de matemática voltada para os
+            <span class="texto-destaque">vestibulares do Paraná</span>
+          </h2>
+          <p class="subtitulo anim-cascata">
+            Cada lista, cada revisão e cada aula de véspera é construída em cima
+            das provas destas instituições.
+          </p>
+        </div>
+
+        <div class="instituicoes anim-cascata">
+          <span class="instituicao-chip">UFPR</span>
+          <span class="instituicao-chip">UTFPR</span>
+          <span class="instituicao-chip">UEPG</span>
+          <span class="instituicao-chip">UEL</span>
+          <span class="instituicao-chip">Unicentro</span>
+          <span class="instituicao-chip">UEM</span>
+          <span class="instituicao-chip">Unioeste</span>
+          <span class="instituicao-chip">PUCPR</span>
+          <span class="instituicao-chip instituicao-chip--longo">Campo Real</span>
+          <span class="instituicao-chip instituicao-chip--longo">Pequeno Príncipe</span>
+          <span class="instituicao-chip">ENEM</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===================== ALUNOS APROVADOS ===================== -->
+    <section id="aprovados" class="secao secao--painel">
+      <div class="container">
+        <div class="secao-cabecalho secao-cabecalho--centro">
+          <span class="secao-etiqueta anim-cascata">Prova de que funciona</span>
+          <h2 class="anim-cascata">Eles sentaram na cadeira da prova</h2>
+          <p class="subtitulo anim-cascata">
+            Histórias reais de quem estudou com a gente e conquistou a vaga.
+          </p>
+        </div>
+
+        <div class="carrossel anim-cascata">
+          <div
+            id="carrossel-alunos"
+            class="carrossel-trilha"
+            tabindex="0"
+            role="region"
+            aria-label="Alunos aprovados"
+          >
+
+            <article class="aluno-cartao">
+              <picture>
+                <source srcset="src/img/alunos_aprovados/matheus_perugini_medicina_ufpr.webp" type="image/webp" />
+                <img
+                  class="aluno-foto"
+                  src="src/img/alunos_aprovados/matheus_perugini_medicina_ufpr.jpg"
+                  alt="Matheus Perugini — aprovação em Medicina na UFPR"
+                  width="512"
+                  height="512"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="aluno-dados">
+                <span class="aluno-instituicao">UFPR</span>
+                <p class="aluno-nome">Matheus Perugini</p>
+                <p class="aluno-curso">Medicina</p>
+              </div>
+            </article>
+
+            <article class="aluno-cartao">
+              <picture>
+                <source srcset="src/img/alunos_aprovados/bruno_delaterra_ignes_ciencia_da_computacao_ufpr.webp" type="image/webp" />
+                <img
+                  class="aluno-foto"
+                  src="src/img/alunos_aprovados/bruno_delaterra_ignes_ciencia_da_computacao_ufpr.jpg"
+                  alt="Bruno Delaterra Ignes — aprovação em Ciência da Computação na UFPR"
+                  width="512"
+                  height="512"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="aluno-dados">
+                <span class="aluno-instituicao">UFPR</span>
+                <p class="aluno-nome">Bruno Delaterra Ignes</p>
+                <p class="aluno-curso">Ciência da Computação</p>
+              </div>
+            </article>
+
+            <article class="aluno-cartao">
+              <picture>
+                <source srcset="src/img/alunos_aprovados/amanda_luiza_cordeiro_medicina_ufpr.webp" type="image/webp" />
+                <img
+                  class="aluno-foto"
+                  src="src/img/alunos_aprovados/amanda_luiza_cordeiro_medicina_ufpr.jpg"
+                  alt="Amanda Luiza Cordeiro — aprovação em Medicina na UFPR"
+                  width="512"
+                  height="512"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="aluno-dados">
+                <span class="aluno-instituicao">UFPR</span>
+                <p class="aluno-nome">Amanda Luiza Cordeiro</p>
+                <p class="aluno-curso">Medicina</p>
+              </div>
+            </article>
+
+            <article class="aluno-cartao">
+              <picture>
+                <source srcset="src/img/alunos_aprovados/beatriz_canzi_engenharia_quimica_utfpr.webp" type="image/webp" />
+                <img
+                  class="aluno-foto"
+                  src="src/img/alunos_aprovados/beatriz_canzi_engenharia_quimica_utfpr.jpg"
+                  alt="Beatriz Canzi — aprovação em Engenharia Química na UTFPR"
+                  width="512"
+                  height="512"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="aluno-dados">
+                <span class="aluno-instituicao">UTFPR</span>
+                <p class="aluno-nome">Beatriz Canzi</p>
+                <p class="aluno-curso">Engenharia Química</p>
+              </div>
+            </article>
+
+            <article class="aluno-cartao">
+              <picture>
+                <source srcset="src/img/alunos_aprovados/theo_prado_bonetti_medicina_puc.webp" type="image/webp" />
+                <img
+                  class="aluno-foto"
+                  src="src/img/alunos_aprovados/theo_prado_bonetti_medicina_puc.jpg"
+                  alt="Theo Prado Bonetti — aprovação em Medicina na PUCPR"
+                  width="512"
+                  height="512"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="aluno-dados">
+                <span class="aluno-instituicao">PUCPR</span>
+                <p class="aluno-nome">Theo Prado Bonetti</p>
+                <p class="aluno-curso">Medicina</p>
+              </div>
+            </article>
+
+            <article class="aluno-cartao">
+              <picture>
+                <source srcset="src/img/alunos_aprovados/gustavo_leao_ciencia_da_computacao_ufpr.webp" type="image/webp" />
+                <img
+                  class="aluno-foto"
+                  src="src/img/alunos_aprovados/gustavo_leao_ciencia_da_computacao_ufpr.jpg"
+                  alt="Gustavo Leão — aprovação em Ciência da Computação na UFPR"
+                  width="512"
+                  height="512"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="aluno-dados">
+                <span class="aluno-instituicao">UFPR</span>
+                <p class="aluno-nome">Gustavo Leão</p>
+                <p class="aluno-curso">Ciência da Computação</p>
+              </div>
+            </article>
+
+            <article class="aluno-cartao">
+              <picture>
+                <source srcset="src/img/alunos_aprovados/paulo_henrique_azevedo_da_silva_medicina_uem.webp" type="image/webp" />
+                <img
+                  class="aluno-foto"
+                  src="src/img/alunos_aprovados/paulo_henrique_azevedo_da_silva_medicina_uem.jpg"
+                  alt="Paulo Henrique Azevedo da Silva — aprovação em Medicina na UEM"
+                  width="512"
+                  height="512"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="aluno-dados">
+                <span class="aluno-instituicao">UEM</span>
+                <p class="aluno-nome">Paulo Henrique Azevedo da Silva</p>
+                <p class="aluno-curso">Medicina</p>
+              </div>
+            </article>
+
+            <article class="aluno-cartao">
+              <picture>
+                <source srcset="src/img/alunos_aprovados/murilo_barbosa_de_paula_mecatronica_utfpr.webp" type="image/webp" />
+                <img
+                  class="aluno-foto"
+                  src="src/img/alunos_aprovados/murilo_barbosa_de_paula_mecatronica_utfpr.jpg"
+                  alt="Murilo Barbosa de Paula — aprovação em Mecatrônica na UTFPR"
+                  width="512"
+                  height="512"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="aluno-dados">
+                <span class="aluno-instituicao">UTFPR</span>
+                <p class="aluno-nome">Murilo Barbosa de Paula</p>
+                <p class="aluno-curso">Mecatrônica</p>
+              </div>
+            </article>
+
+            <article class="aluno-cartao">
+              <picture>
+                <source srcset="src/img/alunos_aprovados/enzo_cordeiro_engenharia_eletrica_ufpr.webp" type="image/webp" />
+                <img
+                  class="aluno-foto"
+                  src="src/img/alunos_aprovados/enzo_cordeiro_engenharia_eletrica_ufpr.jpg"
+                  alt="Enzo Cordeiro — aprovação em Engenharia Elétrica na UFPR"
+                  width="512"
+                  height="512"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="aluno-dados">
+                <span class="aluno-instituicao">UFPR</span>
+                <p class="aluno-nome">Enzo Cordeiro</p>
+                <p class="aluno-curso">Engenharia Elétrica</p>
+              </div>
+            </article>
+
+            <article class="aluno-cartao">
+              <picture>
+                <source srcset="src/img/alunos_aprovados/isabela_chaves_ciencia_da_computacao_uel.webp" type="image/webp" />
+                <img
+                  class="aluno-foto"
+                  src="src/img/alunos_aprovados/isabela_chaves_ciencia_da_computacao_uel.jpg"
+                  alt="Isabela Chaves — aprovação em Ciência da Computação na UEL"
+                  width="512"
+                  height="512"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="aluno-dados">
+                <span class="aluno-instituicao">UEL</span>
+                <p class="aluno-nome">Isabela Chaves</p>
+                <p class="aluno-curso">Ciência da Computação</p>
+              </div>
+            </article>
+
+            <article class="aluno-cartao">
+              <picture>
+                <source srcset="src/img/alunos_aprovados/gabriel_swiech_geologia_ufpr.webp" type="image/webp" />
+                <img
+                  class="aluno-foto"
+                  src="src/img/alunos_aprovados/gabriel_swiech_geologia_ufpr.jpg"
+                  alt="Gabriel Swiech — aprovação em Geologia na UFPR"
+                  width="512"
+                  height="512"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="aluno-dados">
+                <span class="aluno-instituicao">UFPR</span>
+                <p class="aluno-nome">Gabriel Swiech</p>
+                <p class="aluno-curso">Geologia</p>
+              </div>
+            </article>
+
+            <article class="aluno-cartao">
+              <picture>
+                <source srcset="src/img/alunos_aprovados/isabele_cristine_engenharia_eletrica_ufpr.webp" type="image/webp" />
+                <img
+                  class="aluno-foto"
+                  src="src/img/alunos_aprovados/isabele_cristine_engenharia_eletrica_ufpr.jpg"
+                  alt="Isabele Cristine — aprovação em Engenharia Elétrica na UFPR"
+                  width="512"
+                  height="512"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="aluno-dados">
+                <span class="aluno-instituicao">UFPR</span>
+                <p class="aluno-nome">Isabele Cristine</p>
+                <p class="aluno-curso">Engenharia Elétrica</p>
+              </div>
+            </article>
+
+            <article class="aluno-cartao">
+              <picture>
+                <source srcset="src/img/alunos_aprovados/joao_gabriel_administracao_ufpr.webp" type="image/webp" />
+                <img
+                  class="aluno-foto"
+                  src="src/img/alunos_aprovados/joao_gabriel_administracao_ufpr.jpg"
+                  alt="João Gabriel — aprovação em Administração na UFPR"
+                  width="512"
+                  height="512"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="aluno-dados">
+                <span class="aluno-instituicao">UFPR</span>
+                <p class="aluno-nome">João Gabriel</p>
+                <p class="aluno-curso">Administração</p>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="carrossel-controles">
+            <button type="button" class="carrossel-seta carrossel-seta--anterior" aria-label="Ver alunos anteriores">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m15 6-6 6 6 6"/>
+              </svg>
+            </button>
+            <div id="carrossel-pontos" class="carrossel-pontos"></div>
+            <button type="button" class="carrossel-seta carrossel-seta--proxima" aria-label="Ver próximos alunos">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m9 6 6 6-6 6"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="cta-faixa anim-cascata">
+          <a class="botao botao--primario" href="#matricula">
+            Quero minha vaga
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===================== GARANTIAS ===================== -->
+    <section id="garantias" class="secao">
+      <div class="container">
+        <div class="secao-cabecalho secao-cabecalho--centro">
+          <span class="secao-etiqueta anim-cascata">Sem risco pra você</span>
+          <h2 class="anim-cascata">Garantias e segurança</h2>
+        </div>
+
+        <div class="garantias-grade">
+          <div class="garantia-cartao anim-cascata">
+            <span class="garantia-icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v5l3 2"/>
+              </svg>
+            </span>
+            <span class="garantia-texto">
+              <strong>7 dias de garantia</strong>
+              <span>Não gostou? Devolvemos 100% do valor.</span>
+            </span>
+          </div>
+
+          <div class="garantia-cartao anim-cascata">
+            <span class="garantia-icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3 5 6v6c0 4.2 2.9 7.7 7 9 4.1-1.3 7-4.8 7-9V6l-7-3Z"/>
+              </svg>
+            </span>
+            <span class="garantia-texto">
+              <strong>Segurança garantida</strong>
+              <span>Pagamento processado pela Kiwify.</span>
+            </span>
+          </div>
+
+          <div class="garantia-cartao anim-cascata">
+            <span class="garantia-icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3 5 6v6c0 4.2 2.9 7.7 7 9 4.1-1.3 7-4.8 7-9V6l-7-3Z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </span>
+            <span class="garantia-texto">
+              <strong>100% garantido</strong>
+              <span>Acesso liberado na hora da confirmação.</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MATRÍCULA ===================== -->
+    <section id="matricula" class="checkout">
+      <div class="container">
+        <div class="checkout-caixa lousa anim-cascata">
+          <div class="checkout-cabecalho">
+            <span class="secao-etiqueta">Última etapa</span>
+            <h2>Garanta já o seu acesso à plataforma mais completa de matemática do Paraná</h2>
+            <p>
+              O botão abaixo leva direto ao checkout seguro da Kiwify. Você
+              preenche seus dados uma única vez e pronto.
+            </p>
+          </div>
+
+          <div class="preco preco--centro">
+            <p class="preco-parcela">
+              <span class="preco-parcela-rotulo">12x de</span>
+              <strong><span class="preco-moeda">R$</span>144,59</strong>
+            </p>
+            <p class="preco-avista">ou <strong>R$ 1.398,00</strong> à vista</p>
+            <p class="preco-formas">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="M2.5 10h19"/></svg>
+              Cartão, boleto ou Pix
+            </p>
+          </div>
+
+          <a
+            class="botao botao--primario botao--largo botao--grande"
+            href="https://pay.kiwify.com.br/rl4tUCF?region=br"
+          >
+            Quero minha vaga no Extensivo +C
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m9 6 6 6-6 6"/>
+            </svg>
+          </a>
+
+          <p class="checkout-rodape">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="4" y="10" width="16" height="10" rx="2"/>
+              <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+            </svg>
+            Pagamento processado com segurança pela Kiwify. 7 dias de garantia.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DÚVIDAS ===================== -->
+    <section id="duvidas" class="secao secao--painel">
+      <div class="container">
+        <div class="secao-cabecalho secao-cabecalho--centro">
+          <span class="secao-etiqueta anim-cascata">Ainda em dúvida?</span>
+          <h2 class="anim-cascata">Perguntas frequentes</h2>
+        </div>
+
+        <div class="faq-lista anim-cascata">
+
+          <div class="duvida">
+            <button class="duvida-pergunta" type="button" aria-expanded="false">
+              Sou muito fraco em matemática. Vou conseguir acompanhar?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="duvida-resposta">
+              <div>
+                <p>
+                  Vai. O curso de matemática básica existe exatamente por isso:
+                  são mais de 130 aulas e 1000 exercícios começando do mais
+                  básico possível. Você não precisa saber nada para entrar —
+                  precisa estar disposto a começar do começo.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="duvida">
+            <button class="duvida-pergunta" type="button" aria-expanded="false">
+              Qual a diferença entre o +C e o Extensivo MMC?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="duvida-resposta">
+              <div>
+                <p>
+                  O +C tem tudo o que o MMC tem e acrescenta as listas LICS
+                  (revisão espiralada), o Super Intensivo garantido, as revisões
+                  e aulões de véspera, o curso das habilidades do ENEM, o
+                  cronograma montado com o professor e a apostila impressa
+                  entregue na sua casa.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="duvida">
+            <button class="duvida-pergunta" type="button" aria-expanded="false">
+              E se eu não puder assistir às aulas ao vivo?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="duvida-resposta">
+              <div>
+                <p>
+                  Todas as aulas ficam gravadas na plataforma. Você assiste no
+                  seu horário, quantas vezes quiser, e leva as dúvidas para a
+                  aula de assistência semanal.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="duvida">
+            <button class="duvida-pergunta" type="button" aria-expanded="false">
+              Para quais vestibulares o curso prepara?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="duvida-resposta">
+              <div>
+                <p>
+                  O foco é nos principais vestibulares do Paraná — UFPR, UTFPR,
+                  UEPG, UEL, Unicentro, UEM, Unioeste, PUCPR, Campo Real e
+                  Pequeno Príncipe — além de um curso dedicado às habilidades de
+                  matemática do ENEM.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="duvida">
+            <button class="duvida-pergunta" type="button" aria-expanded="false">
+              Quanto custa e como posso pagar?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="duvida-resposta">
+              <div>
+                <p>
+                  O Extensivo +C sai por <strong>R$ 1.398,00 à vista</strong> ou em <strong>12x de R$ 144,59</strong> no cartão. Você pode pagar com cartão de crédito, boleto ou Pix
+                  — a escolha é feita no checkout, depois de preencher seus
+                  dados aqui.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="duvida">
+            <button class="duvida-pergunta" type="button" aria-expanded="false">
+              Como funciona a garantia?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="duvida-resposta">
+              <div>
+                <p>
+                  Você tem 7 dias para entrar, ver tudo por dentro e decidir. Se
+                  não for para você, é só pedir o reembolso dentro desse prazo e
+                  devolvemos 100% do valor.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="duvida">
+            <button class="duvida-pergunta" type="button" aria-expanded="false">
+              Como recebo o acesso depois de pagar?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="duvida-resposta">
+              <div>
+                <p>
+                  Assim que o pagamento é confirmado, a Kiwify envia os dados de
+                  acesso para o e-mail que você cadastrou. Por isso vale conferir
+                  o e-mail com atenção antes de finalizar.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape-grade">
+        <div class="rodape-marca">
+          <img src="src/img/perfil.jpg" alt="" width="44" height="44" />
+          <span class="rodape-marca-texto">
+            MatemáticaMC
+            <small>Prof. Henry Jansen</small>
+          </span>
+        </div>
+
+        <div class="redes-sociais">
+          <a class="rede-social" href="https://www.instagram.com/matematicamc/" target="_blank" rel="noopener noreferrer" aria-label="Instagram do MatemáticaMC">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a class="rede-social" href="https://www.instagram.com/henryjansenb/" target="_blank" rel="noopener noreferrer" aria-label="Instagram pessoal do professor Henry Jansen">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 19a4 4 0 0 0-8 0"/>
+              <circle cx="12" cy="10" r="3"/>
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <p class="rodape-creditos">
+        &copy; <span data-ano>2026</span> Prof. Henry Jansen — MatemáticaMC. Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <script src="src/js/script.js" defer></script>
+</body>
+</html>

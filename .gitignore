@@ -1,0 +1,31 @@
+# Sistema operacional
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+._*
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*~
+
+# Python (ferramentas/)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node (ex.: npm install @fontsource/... para refazer o subconjunto da fonte)
+node_modules/
+npm-debug.log*
+
+# Claude Code — configurações pessoais (o CLAUDE.md vai para o repositório)
+.claude/settings.local.json
+CLAUDE.local.md
+
+# Diversos
+*.log
+.env
