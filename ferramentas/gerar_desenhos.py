@@ -31,7 +31,7 @@ from fontTools.ttLib import TTFont
 
 RAIZ = Path(__file__).resolve().parent.parent
 FONTE = RAIZ / "src/fonts/zen-kurenaido-matematica.woff2"
-ALVOS = [RAIZ / "src/css/estilo.css", RAIZ / "LinkNaBio/src/css/estilo.css"]
+ALVOS = [RAIZ / "src/css/estilo.css", RAIZ / "linknabio/src/css/estilo.css"]
 
 # Tinta dos desenhos. Verde da marca no papel, giz nas lousas.
 TINTA = "#0B7A36"

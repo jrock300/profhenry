@@ -31,7 +31,7 @@ src/css/estilo.css       CSS único das três páginas (tokens no :root)
 src/js/script.js         JS único das três páginas
 src/fonts/               4 fontes woff2 auto-hospedadas + LICENCAS.txt
 src/img/                 perfil.jpg (logo), foto_de_perfil (recorte), alunos_aprovados/
-LinkNaBio/               Página de link na bio — AUTOCONTIDA (CSS, JS, fontes e avatar próprios)
+linknabio/               Página de link na bio — AUTOCONTIDA (CSS, JS, fontes e avatar próprios)
 ferramentas/             gerar_desenhos.py, verificar_copy.py
 ```
 
@@ -47,12 +47,14 @@ ferramentas/             gerar_desenhos.py, verificar_copy.py
      ../henryt/index.html index.html \
      ../henryt/extensivo-mais-c.html extensivo-mais-c.html \
      ../henryt/extensivo-mmc.html extensivo-mmc.html \
-     ../henryt/LinkNaBio/index.html LinkNaBio/index.html
+     ../henryt/LinkNaBio/index.html linknabio/index.html
    ```
 
-   O resultado tem que ser `OK`. A única diferença esperada é o
-   `theme-color` (aviso em `meta`) — o preload das fontes é criado por
-   script, então não aparece em `links_head`.
+   O resultado tem que ser `OK`. As únicas diferenças esperadas são
+   avisos em `meta`: o `theme-color` e, na link na bio, o `og:url`
+   (a pasta virou `linknabio/`, em minúsculas, para a URL funcionar em
+   servidor que diferencia maiúsculas). O preload das fontes é criado
+   por script, então não aparece em `links_head`.
    Se a copy for mudada de propósito, a referência deixa de valer — avise.
 2. **Preço: "ou", nunca "em até".** 12x não é igual ao valor à vista
    (há juros). Ver README.
@@ -92,8 +94,8 @@ três.
 | Garantias `.garantias-grade` | idêntico |
 | Rodapé `.rodape` | idêntico |
 
-A `LinkNaBio/` tem CSS próprio (mesmos tokens, versão enxuta). Mudança
-de token no site → replique em `LinkNaBio/src/css/estilo.css`.
+A `linknabio/` tem CSS próprio (mesmos tokens, versão enxuta). Mudança
+de token no site → replique em `linknabio/src/css/estilo.css`.
 
 ## O que o JavaScript espera do HTML
 
@@ -129,7 +131,7 @@ existirem):
   # fontTools (subset + merge) e salve com o mesmo nome
   ```
 
-  Depois copie o arquivo também para `LinkNaBio/src/fonts/`.
+  Depois copie o arquivo também para `linknabio/src/fonts/`.
 
 ## Estado atual e o que falta para concluir
 
@@ -141,7 +143,7 @@ Feito:
 - [x] Fontes auto-hospedadas, fundo matemático redesenhado à mão
 - [x] Responsivo conferido em 390px e 1440px; menu, carrossel e FAQ
       testados
-- [x] Link do PDF de Análise Combinatória (LinkNaBio) conferido em
+- [x] Link do PDF de Análise Combinatória (linknabio) conferido em
       26/09/2026: abre sem login.
 - [x] Testado em Chromium, Firefox e WebKit (Safari) pelo Playwright,
       abrindo por `file://`: 4 páginas × 9 larguras (320 a 1920px). Sem
@@ -151,13 +153,13 @@ Feito:
 - [x] Lighthouse no celular (26/09/2026, sem compressão): Acessibilidade
       100 e Boas práticas 100 nas 4 páginas; SEO 92 só por falta de
       `robots.txt` no ambiente de teste; Desempenho 76 (landing), 80
-      (cursos), 87 (LinkNaBio). Corrigido: contraste do subtítulo do botão
-      em destaque da LinkNaBio (agora `--verde-claro`, 4,63:1).
+      (cursos), 87 (linknabio). Corrigido: contraste do subtítulo do botão
+      em destaque da linknabio (agora `--verde-claro`, 4,63:1).
 
 Falta (antes de publicar):
 
 - [ ] Trocar `seudominio.com.br` pelo domínio real (3 ocorrências em cada
-      página do site, 2 na LinkNaBio — uma delas é o comentário "ANTES DE
+      página do site, 2 na linknabio — uma delas é o comentário "ANTES DE
       PUBLICAR"). Aproveitar para deixar `og:image` e `twitter:image` com
       URL absoluta — redes sociais não leem caminho relativo.
 - [ ] Conferir acentos dos nomes dos alunos e a sigla "PUCPR" (README).

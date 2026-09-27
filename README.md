@@ -19,7 +19,7 @@ src/js/script.js           Script único das três páginas
 src/fonts/                 Fontes auto-hospedadas (woff2) + licenças
 src/img/                   Imagens (logo, foto do professor, alunos)
 
-LinkNaBio/                 Página de link na bio (Instagram)
+linknabio/                 Página de link na bio (Instagram)
   index.html
   src/css/estilo.css       Autocontido — não depende do CSS do site
   src/js/script.js
@@ -126,15 +126,15 @@ com CPF e telefone só em dígitos, telefone com DDD e sem o +55.
 
 ## Link na bio
 
-A pasta `LinkNaBio/` é a página para o link do perfil no Instagram.
-Publicada junto com o site, ela fica em `seudominio.com.br/LinkNaBio/`.
+A pasta `linknabio/` é a página para o link do perfil no Instagram.
+Publicada junto com o site, ela fica em `seudominio.com.br/linknabio/`.
 
 Ela aponta para as páginas do site por caminho relativo
 (`../extensivo-mais-c.html`), então **não** mova a pasta para fora da
 raiz do projeto sem corrigir esses links.
 
 O CSS, o JS e as fontes dela são autocontidos, e o avatar está duplicado
-dentro de `LinkNaBio/src/img/` (41 KB). Foi de propósito: assim a pasta
+dentro de `linknabio/src/img/` (41 KB). Foi de propósito: assim a pasta
 também pode ser publicada sozinha, num subdomínio ou serviço separado,
 sem arrastar o site inteiro junto. Se fizer isso, os quatro links
 internos precisam virar URLs absolutas.
