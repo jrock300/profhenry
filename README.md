@@ -204,7 +204,10 @@ A pasta `ferramentas/` não precisa ir para o ar.
 
 ## Notas técnicas
 
-- **Sem CDN.** Nenhuma fonte, biblioteca ou script de terceiros. As
+- **Sem CDN.** Nenhuma fonte, biblioteca ou script de terceiros — a
+  única exceção é o Cloudflare Web Analytics (métricas de visita, sem
+  cookies), no fim do `<body>` das 4 páginas; o Cloudflare desaconselha
+  servir uma cópia própria do script. As
   quatro fontes ficam em `src/fonts/` (≈120 KB no total) e são todas
   OFL — a licença está em `src/fonts/LICENCAS.txt`. A dos títulos e a
   do texto são pré-carregadas no `<head>` quando a página vem de

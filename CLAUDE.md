@@ -60,6 +60,9 @@ ferramentas/             gerar_desenhos.py, verificar_copy.py
    (há juros). Ver README.
 3. **Links da Kiwify** terminam em `?region=br`. Não remova.
 4. **Nada de CDN.** Fontes, scripts e imagens ficam no projeto.
+   Única exceção: o Cloudflare Web Analytics
+   (`static.cloudflareinsights.com/beacon.min.js`), no fim do `<body>`
+   das 4 páginas. O Cloudflare desaconselha servir uma cópia própria.
 5. **Decoração é `aria-hidden="true"`.** Fundo, adesivos, reta numérica,
    operadores "+" da credibilidade — tudo que é enfeite fica fora da
    leitura de tela.
@@ -93,6 +96,7 @@ três.
 | Instituições `.instituicoes` | idêntico |
 | Garantias `.garantias-grade` | idêntico |
 | Rodapé `.rodape` | idêntico |
+| Cloudflare Web Analytics (fim do `<body>`) | idêntico, **também na `linknabio/`** — mesmo token |
 
 A `linknabio/` tem CSS próprio (mesmos tokens, versão enxuta). Mudança
 de token no site → replique em `linknabio/src/css/estilo.css`.
