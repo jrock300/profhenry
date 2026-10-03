@@ -29,3 +29,8 @@ CLAUDE.local.md
 # Diversos
 *.log
 .env
+
+# Originais das fotos e prints dos depoimentos — o site usa as versões
+# 512px em .webp/.jpg e o texto no HTML (ver README)
+src/img/alunos_aprovados/*.png
+src/img/depoimentos/

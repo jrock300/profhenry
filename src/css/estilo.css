@@ -1823,6 +1823,52 @@ h3 {
   text-wrap: balance;
 }
 
+/* Depoimento escrito na margem da polaroide. A aspa é à mão (Caveat);
+   o texto fica na fonte corrida, porque a Caveat é só para trechos
+   curtos. Os cartões de uma fileira têm a altura do mais alto, então a
+   legenda (carimbo, nome, curso) desce para a base: os nomes ficam
+   alinhados, com ou sem depoimento, e o depoimento fica no topo. */
+.aluno-cartao {
+  display: flex;
+  flex-direction: column;
+}
+
+.aluno-dados {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.aluno-depoimento {
+  position: relative;
+  margin-top: 0.2rem;
+  margin-bottom: 0.85rem;
+  padding-top: 1.45rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--tinta-suave);
+}
+
+/* Decorativa: o "/ ''" tira a aspa da leitura de tela. */
+.aluno-depoimento::before {
+  content: "\201C";
+  content: "\201C" / "";
+  position: absolute;
+  top: -0.3rem;
+  left: -0.15rem;
+  font-family: var(--fonte-mao);
+  font-size: 3.4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--verde);
+}
+
+.aluno-depoimento + .aluno-nome {
+  margin-top: auto;
+}
+
 .carrossel-controles {
   display: flex;
   align-items: center;

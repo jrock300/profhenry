@@ -147,6 +147,11 @@
     }
 
     function paginaAtual() {
+      /* No fim da trilha é sempre a última página, mesmo quando a conta
+         por largura não fecha (ver irParaPagina). */
+      if (trilha.scrollLeft >= trilha.scrollWidth - trilha.clientWidth - 2) {
+        return totalPaginas() - 1;
+      }
       return Math.round(trilha.scrollLeft / (passo() * porTela()));
     }
 
@@ -157,9 +162,17 @@
     let paginaAlvo = 0;
 
     function irParaPagina(indice) {
-      paginaAlvo = Math.max(0, Math.min(totalPaginas() - 1, indice));
+      const ultima = totalPaginas() - 1;
+      paginaAlvo = Math.max(0, Math.min(ultima, indice));
+      /* porTela() arredonda (3,8 cartões visíveis contam como 4), então
+         a conta da última página pode parar antes do fim e deixar o
+         último cartão cortado, com a seta ativa sem ter para onde ir. A
+         última página vai sempre até o fim da trilha. */
       trilha.scrollTo({
-        left: paginaAlvo * passo() * porTela(),
+        left:
+          paginaAlvo === ultima
+            ? trilha.scrollWidth - trilha.clientWidth
+            : paginaAlvo * passo() * porTela(),
         behavior: preferemMenosMovimento ? "auto" : "smooth",
       });
     }

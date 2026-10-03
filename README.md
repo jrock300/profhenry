@@ -51,8 +51,23 @@ Dois pontos que **foram inferidos** e valem conferência:
 - **`..._medicina_puc.png` virou "PUCPR"**, para bater com a lista de
   instituições do site. Se for outra PUC, corrija.
 
-> **Atenção:** as fotos e os nomes são de pessoas reais. Confirme que há
-> autorização de uso com finalidade comercial antes de colocar no ar.
+Depois deles vêm **15 alunos com depoimento** e sem instituição
+registrada — o cartão não tem carimbo nem curso, só o depoimento e o
+nome. As fotos estão como `nome_sobrenome.webp/.jpg` e os depoimentos
+originais (prints) em `src/img/depoimentos/`.
+
+- **Depoimentos resumidos.** Os longos viraram trechos das próprias
+  palavras do aluno (até ~110 caracteres, para não aumentar o cartão);
+  só foram corrigidos "ignorancia" e um espaço antes de vírgula.
+- **Nomes** vêm da assinatura do depoimento: "Álvaro Abrão", "Letícia
+  Gonçalves Dias", "Eduardo Henrique Souza", "Arthur M. Lopes".
+- **Maria Eduarda**: o print do depoimento está sem a assinatura; foi
+  identificado pela foto (é a mesma imagem do avatar). O sobrenome não
+  aparece em lugar nenhum.
+
+> **Atenção:** as fotos, os nomes e os depoimentos são de pessoas reais.
+> Confirme que há autorização de uso com finalidade comercial antes de
+> colocar no ar.
 
 ### 2. Domínio
 
@@ -188,7 +203,9 @@ Para adicionar outra, copie um bloco `.cta-faixa` para o fim do
 ## Testando localmente
 
 Abra o `index.html` direto no navegador — não precisa de servidor.
-Funciona em Chrome, Edge, Firefox e Safari, sem erro no console.
+Funciona em Chrome, Edge, Firefox e Safari. O único erro no console é
+o do Cloudflare Web Analytics: em `file://` o navegador bloqueia o envio
+por CORS (nenhuma visita é registrada). No site publicado ele some.
 
 Por isso o `<link rel="preload">` das fontes não está escrito no HTML:
 um script curto no `<head>` só o cria quando a página vem de `http(s)`.
@@ -235,8 +252,14 @@ A pasta `ferramentas/` não precisa ir para o ar.
   padrão `nome_curso_instituicao`, depois copie um
   `<article class="aluno-cartao">` existente nos três HTML, trocando o
   nome do arquivo, a sigla, o nome e o curso.
+
+  **Depoimento:** fica num `<blockquote class="aluno-depoimento">` antes
+  do nome; sem ele, o cartão volta ao formato só com a legenda. Mantenha
+  até ~110 caracteres: todos os cartões da fileira ficam com a altura do
+  mais alto, então um texto longo aumenta todos. Sem instituição, apague
+  o `<span class="aluno-instituicao">` e o `<p class="aluno-curso">`.
 - **Carrossel.** Acima de 8 páginas os pontinhos viram um contador
-  ("3 / 13"). Os cartões são polaroides levemente tortas; por isso o
+  ("3 / 28"). Os cartões são polaroides levemente tortas; por isso o
   passo da rolagem usa `offsetWidth` (largura de layout), que não muda
   com a rotação.
 - **Se o JavaScript falhar**, a página continua legível: o conteúdo nasce

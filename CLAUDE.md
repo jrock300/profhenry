@@ -92,7 +92,7 @@ três.
 | Fundo (`.fundo-matematico`, `.fundo-simbolos`, `.fundo-grao`) | idêntico |
 | Cabeçalho `.cabecalho` | idêntico, **exceto** os links do `<nav>` e o botão (`#cursos` na landing, `#matricula` nos cursos) |
 | Figura do hero `.hero-figura` (arco + parábola + adesivos) | idêntica |
-| Carrossel `#carrossel-alunos` (13 alunos) | idêntico |
+| Carrossel `#carrossel-alunos` (28 alunos: 13 com instituição + 15 com depoimento) | idêntico |
 | Instituições `.instituicoes` | idêntico |
 | Garantias `.garantias-grade` | idêntico |
 | Rodapé `.rodape` | idêntico |
@@ -162,12 +162,15 @@ Feito:
 
 Falta (antes de publicar):
 
+- [ ] Conferir os 15 depoimentos resumidos (originais em
+      `src/img/depoimentos/`) e os nomes vindos da assinatura — ver README.
 - [ ] Trocar `seudominio.com.br` pelo domínio real (3 ocorrências em cada
       página do site, 2 na linknabio — uma delas é o comentário "ANTES DE
       PUBLICAR"). Aproveitar para deixar `og:image` e `twitter:image` com
       URL absoluta — redes sociais não leem caminho relativo.
 - [ ] Conferir acentos dos nomes dos alunos e a sigla "PUCPR" (README).
-- [ ] Confirmar autorização de uso das fotos/nomes dos alunos.
+- [ ] Confirmar autorização de uso das fotos, nomes e depoimentos dos
+      alunos (os 28 do carrossel).
 - [ ] Olhar num iPhone de verdade. O WebKit do Playwright no Windows não
       desenha os pesos da fonte variável (o negrito da Figtree some); no
       Safari real deve estar certo, mas vale confirmar.
